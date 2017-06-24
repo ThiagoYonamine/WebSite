@@ -9,13 +9,31 @@ class UserController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def login={
-         flash.message="Sucesso"
-        def b = User.findOrSaveByNome(params.nome)
-        session.setAttribute("id", b.id)
-        session.setAttribute("usr", b)
-        println b.id
-        println session.getAttribute("id")
-        redirect(action: 'index')
+
+        def b = User.findByNome(params.nome)
+        if(b) {
+            println b.senha
+            println params.senha
+            if(params.senha == b.senha){
+                session.setAttribute("id", b.id)
+                session.setAttribute("usr", b)
+                flash.message="Sucesso"
+
+            }
+            else {
+                flash.message="Senha invalida"
+                redirect(uri: "/")
+            }
+        }
+        else{
+           def a = new User(nome: params.nome, senha: params.senha, parques: 0 ,museus: 0 , dinheiro: 0)
+            a.save()
+
+            def c = User.findByNome(params.nome)
+            session.setAttribute("usr",c)
+            redirect(action: 'index')
+
+        }
     }
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

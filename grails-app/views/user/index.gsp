@@ -6,9 +6,8 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-    <h2>OII</h2>
-    <h2>aki ${session.getAttribute("id")}</h2> <br>
-    <h2>aki ${session.getAttribute("usr").id}</h2>
+    <h2>OII  ${session.getAttribute("usr").id}</h2>
+
         <a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
        <a href="index.gsp" ></a>
         <div class="nav" role="navigation">

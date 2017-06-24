@@ -10,10 +10,13 @@
 <body>
 
 <div class="image">
+    <div class="message">
+        ${flash.message}
+    </div>
 
     <div id="primeiraPergunta">
     <g:form controller="user" action="login">
-        <input type="number" min="0" id="dinheiro" name="dinheiro">
+        <input type="password" min="0" id="senha" name="senha">
         <input type="text" id="nome" name="nome">
         <a href="index.gsp" ><g:actionSubmit value="Login" /> </a>
     </g:form>

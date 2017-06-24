@@ -14,7 +14,7 @@
     <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
     <title><g:message code="default.edit.label" args="[entityName]" /></title>
     <div id ="headerText">
-        ${session.getAttribute("id")}
+        ${session.getAttribute("usr").id}
     </div>
 
     <div id="primeiraPergunta">
