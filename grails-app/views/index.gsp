@@ -11,8 +11,8 @@
 
 <div class="image">
     <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
-    <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+
+
     <div id ="headerText">
         ${session.getAttribute("usr").id}
     </div>
@@ -74,6 +74,10 @@
                     </g:each>
                 </ul>
             </div>
+
+
+            <g:include controller="locais" action="listar" />
+
         </section>
     </div>
 

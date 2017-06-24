@@ -7,7 +7,13 @@ import grails.transaction.Transactional
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def hi(){ def hobbies = ["basketball", "photography"]
+        render(view: "index", model: [name: "Maricel", hobbies: hobbies])
+    }
 
+    def like = {
+        
+    }
     def login={
 
         def b = User.findByNome(params.nome)

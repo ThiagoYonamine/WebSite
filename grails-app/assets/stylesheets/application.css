@@ -24,7 +24,21 @@
     width: 100%; /* for IE 6 */
     position: relative;
 }
+.img {
+    position: relative;
+    float: left;
+    width:  310px;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+#imageLocal {
+    margin: auto;
+    width: 100%; /* for IE 6 */
+    position: relative;
 
+}
 #headerText {
     color: #fbf2ce;
     font-size: 60px;
