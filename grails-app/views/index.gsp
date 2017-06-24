@@ -2,56 +2,58 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcnetrbvraerme to Grails</title>
+    <title>Voadora</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+
 </head>
 <body>
-    <content tag="nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
-                <li><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
-                <li><a href="#">App version:
-                    <g:meta name="info.app.version"/></a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Grails version:
-                    <g:meta name="info.app.grailsVersion"/></a>
-                </li>
-                <li><a href="#">Groovy version: ${GroovySystem.getVersion()}</a></li>
-                <li><a href="#">JVM version: ${System.getProperty('java.version')}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
-                <li><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
-                <li><a href="#">Services: ${grailsApplication.serviceClasses.size()}</a></li>
-                <li><a href="#">Tag Libraries: ${grailsApplication.tagLibClasses.size()}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
-                </g:each>
-            </ul>
-        </li>
-    </content>
 
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-        </div>
+<div class="image">
+    <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
+    <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+    <div id ="headerText">
+        ${session.getAttribute("id")}
     </div>
 
-    <div id="content" role="main">
+    <div id="primeiraPergunta">
+        <g:form resource="${session.getAttribute("usr")}" method="PUT">
+            <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
+            <input type="number" min="0" id="dinheiro" name="dinheiro">
+            <fieldset class="buttons">
+                <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+            </fieldset>
+        </g:form>
+
+
+    </div>
+
+    <div id="segundaPergunta">
+    <form>
+        <select id="country" name="country">
+            <option value="au">Estado</option>
+            <option value="ca">Dinheiro</option>
+            <option value="usa">Mes</option>
+        </select>
+    </form>
+    </div>
+
+    <div id="terceiraPergunta">
+        <form>
+            <input type="month" id="data" name="fname">
+        </form>
+    </div>
+
+    <a href="#section1">
+    <div id="buscar">
+        <input type="submit" class="btn gigante btn-success" value="Buscar" href="#section1">
+    </div>
+    </a>
+
+</div>
+
+<div id="content" role="main">
         <section class="row colset-2-its">
             <h1>Welcome to Grails</h1>
 
@@ -75,5 +77,7 @@
         </section>
     </div>
 
+<h1 id="section1">Section 1</h1>
+<asset:javascript src="application.js"/>
 </body>
 </html>

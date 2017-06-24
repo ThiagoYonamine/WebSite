@@ -8,8 +8,8 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-
-        "/"(view:"/index")
+        "/index"(view:"/index")
+        "/"(view:"/login")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

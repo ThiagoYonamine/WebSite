@@ -13,3 +13,118 @@
 *= require mobile
 *= require_self
 */
+#perguntaText {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+.image {
+    margin: auto;
+    width: 100%; /* for IE 6 */
+    position: relative;
+}
+
+#headerText {
+    color: #fbf2ce;
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+
+}
+#primeiraPergunta{
+    position: absolute;
+    top: 70%;
+    left: 27%;
+
+}
+.second {
+    width: 100%;
+    height: 1000px;
+    background: #999;
+}
+#segundaPergunta{
+    position: absolute;
+    top: 70%;
+    left: 46%;
+
+}
+#terceiraPergunta{
+    position: absolute;
+    top: 70%;
+    left: 58%;
+
+}
+#quartaPergunta{
+    position: absolute;
+    top: 70%;
+    left: 59%;
+
+}
+#quintaPergunta{
+    position: absolute;
+    top: 70%;
+    left: 75%;
+
+}
+#buscar{
+    position: absolute;
+    top: 95%;
+    left: 40%;
+    height: 10%;
+    width: 10%;
+
+}
+.gigante {
+    width: 200%;
+    height: 100%;
+    font-size: 60px;
+    white-space: normal;
+
+}
+select {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1dbcd;
+}
+
+input[type=number] {
+    background-color: #f1dbcd;
+    padding: 11px 13px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type=number]:focus {
+    background-color: #f8f9f0;
+    border-radius: 10px;
+    border: 3px solid #feeae0;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=month] {
+    background-color: #f1dbcd;
+    padding: 11px 13px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type=month]:focus {
+    background-color: #f8f9f0;
+    border-radius: 10px;
+    border: 3px solid #feeae0;
+}
