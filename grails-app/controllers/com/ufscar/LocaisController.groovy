@@ -10,7 +10,17 @@ class LocaisController {
 
     def listar() {
         def hobbies= Locais.list()
-        render(view: "modeloLocal", model: [name: "Maricel", hobbies: hobbies])
+        def u = session.getAttribute("usr")
+        def pontosTuristicos = []
+        def cat = ["parques","museus"]
+        for (categorias in cat){
+            def results = Locais.findAllByCategoria(categorias,[max: u.parques])
+            for (item in results) {
+                pontosTuristicos.add(item)
+            }
+        }
+
+        render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos, hobbies: hobbies])
     }
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

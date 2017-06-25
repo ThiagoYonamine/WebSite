@@ -12,27 +12,27 @@
 
 
     <div class="row">
-        <g:each in="${hobbies}" var="hobby">
+        <g:each in="${pontosTuristicos}" var="pt">
 
               <div class="col-md-4">
-              <h2 align = center>${hobby.nome}</h2>
+              <h2 align = center>${pt.nome}</h2>
                 <div class="thumbnail">
-                    <a href="/assets/img${hobby.url}.jpg" target="_blank">
-                        <div class="img" style="background-image:url('/assets/img${hobby.url}.jpg');" ></div>
+                    <a href="/assets/img${pt.url}.jpg" target="_blank">
+                        <div class="img" style="background-image:url('/assets/img${pt.url}.jpg');" ></div>
 
                         <div class="caption">
-                            <p>${hobby.descricao}</p>
+                            <p>${pt.descricao}</p>
                         </div>
                     </a>
 
                 </div>
                   <div id="vote">
-                <g:form resource="${session.getAttribute("usr")}" method="PUT">
+                <g:form resource="${session.getAttribute("usr")}" method="PUT" >
                     <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
                         <div id="hide">
-                          <input type="number"  id="${hobby.categoria}" name="${hobby.categoria}" value= <g:like categoria="${hobby.categoria}" user="${session.getAttribute("usr")}"/> >
+                          <input type="number"  id="${pt.categoria}" name="${pt.categoria}" value= <g:like categoria="${pt.categoria}" user="${session.getAttribute("usr")}"/> >
                         </div>
-                      <input  id="btn1" class="btn btn-success " type="submit" value="Like" />
+                      <input  id="btn1" class="btn btn-success " type="submit" value="Like" "/>
                     </g:form>
                   </div>
 

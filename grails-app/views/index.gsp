@@ -76,13 +76,13 @@
                 </ul>
             </div>
 
-
+            <h1 id="section1">Section 1</h1>
             <g:include controller="locais" action="listar" />
 
         </section>
     </div>
 
-<h1 id="section1">Section 1</h1>
+
 <asset:javascript src="application.js"/>
 </body>
 </html>

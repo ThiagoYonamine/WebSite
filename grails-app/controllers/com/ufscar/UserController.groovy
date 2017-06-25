@@ -73,6 +73,9 @@ class UserController {
         }
     }
 
+    def arrumaLista(){
+        redirect (uri: "/index#section1")
+    }
     def edit(User user) {
         respond user
     }
@@ -96,7 +99,7 @@ class UserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect(uri: "/index")
+                redirect(controller: "user", action: "arrumaLista")
             }
             '*'{ respond user, [status: OK] }
         }
