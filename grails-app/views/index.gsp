@@ -1,4 +1,5 @@
 <!doctype html>
+<%@ page import="com.ufscar.Adaptativo" %>
 <html>
 <head>
     <meta name="layout" content="main"/>
@@ -21,9 +22,9 @@
         <g:form resource="${session.getAttribute("usr")}" method="PUT">
             <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
             <input type="number" min="0" id="dinheiro" name="dinheiro">
-            <fieldset class="buttons">
+
                 <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-            </fieldset>
+
         </g:form>
 
 

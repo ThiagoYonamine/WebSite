@@ -8,12 +8,8 @@ class LocaisController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def hi(){
-        def hobbies = ["basketball", "photography"]
-        render(view: "modeloLocal", model: [name: "Maricel", hobbies: hobbies])
-    }
     def listar() {
-        def hobbies = Locais.list()
+        def hobbies= Locais.list()
         render(view: "modeloLocal", model: [name: "Maricel", hobbies: hobbies])
     }
     def index(Integer max) {

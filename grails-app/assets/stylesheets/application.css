@@ -32,13 +32,25 @@
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;
+    border-radius: 7px;
 }
 #imageLocal {
     margin: auto;
     width: 100%; /* for IE 6 */
     position: relative;
 
+
 }
+
+#hide {
+
+    display: none;
+}
+#vote{
+    position: relative;
+    top: -17px;
+}
+
 #headerText {
     color: #fbf2ce;
     font-size: 60px;

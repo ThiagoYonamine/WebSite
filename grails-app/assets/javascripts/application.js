@@ -42,3 +42,8 @@ window.smoothScroll = function(target) {
     // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
+/*
+function disable() {
+    document.getElementById("btn1").disabled = true;
+    document.getElementById("localForm").submit()
+}*/
