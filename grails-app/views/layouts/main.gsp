@@ -21,7 +21,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Perfil do usuário</a></li>
             <li><a href="#">Page 2</a></li>
             <li><a href="#">Page 3</a></li>
         </ul>
@@ -34,30 +34,7 @@
 </nav>
 
     <g:layoutBody/>
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
-<br>a
+
     <div class="footer" role="contentinfo"></div>
 
     <div id="spinner" class="spinner" style="display:none;">
