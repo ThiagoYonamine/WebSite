@@ -31,6 +31,8 @@ class LocaisController {
         def newLocal = Locais.get(params.id)
         u.addToLocais(newLocal)
         u.save(flush: true)
+
+        redirect(uri: "/index#section1")
     }
 
     def listar() {
@@ -41,9 +43,8 @@ class LocaisController {
         def cats = [natureza: u.natureza, cidade: u.cidade, outros: u.outros]
         for (categorias in cats) {
                 def results = Locais.findAllByCategoria(categorias.key)
-                def cont = 0
+                def cont = 0.9
                 for (item in results) {
-                    println categorias.value
                     if (cont >= categorias.value)
                         break
 

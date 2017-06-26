@@ -13,7 +13,7 @@
 <div class="image">
     <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
     <div id ="headerText">
-        ${session.getAttribute("id")}
+
     </div>
 
 

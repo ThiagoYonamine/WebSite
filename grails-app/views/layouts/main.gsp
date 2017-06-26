@@ -20,15 +20,15 @@
             <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Perfil do usuário</a></li>
+            <li class="active"><a href="index">Home</a></li>
+            <li><a href="/usrPro">Perfil do usuário</a></li>
             <li><a href="#">Page 2</a></li>
             <li><a href="#">Page 3</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            glyphicon glyphicon-user
-            <li><a href="#"><span class="favicon.ico"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+
+            <li><a href="#">Logout</a></li>
         </ul>
     </div>
 </nav>

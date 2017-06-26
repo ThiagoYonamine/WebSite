@@ -43,11 +43,9 @@ class UserController {
             l3.nome = "c"
             l3.descricao ="c"
 
-
             l1.save(flush: true)
             l2.save(flush: true)
             l3.save(flush: true)
-
 
             def a = new User()
             a.nome = params.nome
@@ -56,7 +54,7 @@ class UserController {
             def c = User.findByNome(params.nome)
             session.setAttribute("usr",c)
             session.setAttribute("id", c.id)
-            redirect(action: 'index')
+            redirect(uri: "/index")
 
         }
     }
