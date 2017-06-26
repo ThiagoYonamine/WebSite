@@ -27,6 +27,28 @@ class UserController {
             }
         }
         else{
+            Locais l1 = new Locais()
+            l1.categoria = "natureza"
+            l1.url = "1"
+            l1.nome = "a"
+            l1.descricao ="a"
+            Locais l2 = new Locais()
+            l2.categoria = "cidade"
+            l2.url = "2"
+            l2.nome = "b"
+            l2.descricao ="b"
+            Locais l3 = new Locais()
+            l3.categoria = "outros"
+            l3.url = "3"
+            l3.nome = "c"
+            l3.descricao ="c"
+
+
+            l1.save(flush: true)
+            l2.save(flush: true)
+            l3.save(flush: true)
+
+
             def a = new User()
             a.nome = params.nome
             a.senha = params.senha
@@ -38,6 +60,14 @@ class UserController {
 
         }
     }
+    def attInit() {
+        def au = session.getAttribute("id")
+        def u = User.get(au)
+        u.dinheiro = params.int('dinheiro')
+        u.estado = params.estado
+        u.save(flush: true)
+    }
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]

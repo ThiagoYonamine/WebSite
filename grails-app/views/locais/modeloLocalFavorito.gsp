@@ -26,17 +26,11 @@
                     </a>
 
                 </div>
-                  <div id="vote">
-                <g:form resource="${session.getAttribute("usr")}" method="PUT" >
-                    <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
-                        <div id="hide">
-                          <input type="number"  id="${pt.categoria}" name="${pt.categoria}" value= <g:like categoria="${pt.categoria}" user="${session.getAttribute("usr")}"/> >
-                        </div>
-                      <input  id="btn1" class="btn btn-success " type="submit" value="Unlike" "/>
+                <div id="vote">
+                    <g:form  action="attLike" params="[categoria: pt.categoria, id: pt.id]">
+                        <input class="btn btn-success " type="submit" value="Like" />
                     </g:form>
-                  </div>
-
-              </div>
+                </div>
         </g:each>
     </div>
 

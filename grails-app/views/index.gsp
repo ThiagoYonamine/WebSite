@@ -12,45 +12,29 @@
 
 <div class="image">
     <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
-
-
     <div id ="headerText">
         ${session.getAttribute("id")}
     </div>
 
+
+    <g:form  controller="user" action="attInit" >
     <div id="primeiraPergunta">
-        <g:form resource="${session.getAttribute("usr")}" method="PUT">
-            <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
-            <input type="number" min="0" id="dinheiro" name="dinheiro">
-
-            <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-
-        </g:form>
-
-
+            <input type="number" value=0 min=0 id="dinheiro" name="dinheiro">
     </div>
 
     <div id="segundaPergunta">
-    <form>
-        <select id="country" name="country">
-            <option value="au">Estado</option>
-            <option value="ca">Dinheiro</option>
-            <option value="usa">Mes</option>
+        <select id="estado" name="estado">
+            <option value="todos">Todos</option>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
         </select>
-    </form>
     </div>
+        <a href="#section1">
+                <input class="btn gigante btn-success " type="submit" value="Buscar" />
+        </a>
+    </g:form>
 
-    <div id="terceiraPergunta">
-        <form>
-            <input type="month" id="data" name="fname">
-        </form>
-    </div>
 
-    <a href="#section1">
-    <div id="buscar">
-        <input type="submit" class="btn gigante btn-success" value="Buscar" href="#section1">
-    </div>
-    </a>
 
 </div>
 

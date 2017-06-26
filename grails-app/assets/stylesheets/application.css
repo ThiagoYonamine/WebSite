@@ -96,15 +96,13 @@
     position: absolute;
     top: 95%;
     left: 40%;
-    height: 10%;
-    width: 10%;
+    height: 1000px;
+    width: 100px;
 
 }
 .gigante {
-    width: 200%;
-    height: 100%;
-    font-size: 60px;
-    white-space: normal;
+    width: 20%;
+    height: 40%;
 
 }
 select {

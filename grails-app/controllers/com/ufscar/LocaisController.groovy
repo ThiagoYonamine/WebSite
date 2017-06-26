@@ -9,14 +9,23 @@ class LocaisController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def attLike(){
-        def au = session.getAttribute("usr")
-        def u = User.get(au.id)
+        def au = session.getAttribute("id")
+        def u = User.get(au)
         def categoria = params.categoria
-        if(categoria=="parques"){
-            u.parques = u.parques+1
+        if(categoria=="natureza"){
+            u.natureza = u.natureza*1.4
+            u.cidade = u.cidade/1.1
+            u.outros = u.outros/1.05
         }
-        if(categoria=="museus"){
-            u.museus = u.museus+1
+        if(categoria=="cidade"){
+            u.cidade = u.cidade*1.4
+            u.natureza = u.natureza/1.1
+            u.outros = u.outros/1.05
+        }
+        if(categoria=="outros"){
+            u.outros = u.outros*1.4
+            u.natureza = u.natureza/1.05
+            u.cidade = u.cidade/1.05
         }
 
         def newLocal = Locais.get(params.id)
@@ -29,11 +38,12 @@ class LocaisController {
         def au = session.getAttribute("id") // u = usuário logado (objeto)
         def u = User.get(au)
         def pontosTuristicos = []
-        def cats = [parques: u.parques, museus: u.museus]
+        def cats = [natureza: u.natureza, cidade: u.cidade, outros: u.outros]
         for (categorias in cats) {
                 def results = Locais.findAllByCategoria(categorias.key)
                 def cont = 0
                 for (item in results) {
+                    println categorias.value
                     if (cont >= categorias.value)
                         break
 

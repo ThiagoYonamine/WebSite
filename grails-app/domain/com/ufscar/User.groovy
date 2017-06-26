@@ -4,9 +4,11 @@ class User {
 
     String nome;
     String senha;
-    int parques =0;
-    int museus=0;
-    int dinheiro=0;
+    float natureza =2.1
+    float cidade=2.1
+    float outros=2.1
+    int dinheiro=0
+    String estado= "todos"
     static hasMany = [locais: Locais]
     static constraints = {
 
