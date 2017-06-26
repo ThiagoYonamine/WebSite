@@ -9,8 +9,8 @@ class LocaisController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def listar() {
-        def hobbies= Locais.list()
-        def u = session.getAttribute("usr")
+        def hobbies = Locais.list() //Todos os pontos turísticos
+        def u = session.getAttribute("usr") // u = usuário logado (objeto)
         def pontosTuristicos = []
         def cat = ["parques","museus"]
         for (categorias in cat){
