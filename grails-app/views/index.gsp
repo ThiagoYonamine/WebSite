@@ -15,7 +15,7 @@
 
 
     <div id ="headerText">
-        ${session.getAttribute("usr").id}
+        ${session.getAttribute("id")}
     </div>
 
     <div id="primeiraPergunta">
@@ -23,7 +23,7 @@
             <g:hiddenField name="version" value="${session.getAttribute("usr")?.version}" />
             <input type="number" min="0" id="dinheiro" name="dinheiro">
 
-                <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+            <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 
         </g:form>
 

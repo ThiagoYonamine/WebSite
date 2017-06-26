@@ -8,34 +8,53 @@ class LocaisController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def listar() {
-        def hobbies = Locais.list() //Todos os pontos turísticos
-        def u = session.getAttribute("usr") // u = usuário logado (objeto)
-        def pontosTuristicos = []
-        def cat = ["parques","museus"]
-        for (categorias in cat){
-            def results = Locais.findAllByCategoria(categorias,[max: u.parques])
-            for (item in results) {
-                pontosTuristicos.add(item)
-            }
+    def attLike(){
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
+        def categoria = params.categoria
+        if(categoria=="parques"){
+            u.parques = u.parques+1
+        }
+        if(categoria=="museus"){
+            u.museus = u.museus+1
         }
 
-        render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos, hobbies: hobbies])
+        def newLocal = Locais.get(params.id)
+        u.addToLocais(newLocal)
+        u.save(flush: true)
+    }
+
+    def listar() {
+        def hobbies = Locais.list() //Todos os pontos turísticos
+        def au = session.getAttribute("id") // u = usuário logado (objeto)
+        def u = User.get(au)
+        def pontosTuristicos = []
+        def cats = [parques: u.parques, museus: u.museus]
+        for (categorias in cats) {
+                def results = Locais.findAllByCategoria(categorias.key)
+                def cont = 0
+                for (item in results) {
+                    if (cont >= categorias.value)
+                        break
+
+                    if (!(u.locais.contains(item))) {
+                        pontosTuristicos.add(item)
+                        cont++
+                    }
+                }
+        }
+        render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos])
     }
 
     def listarFavoritos() {
-        def hobbies = Locais.list()
-        def u = session.getAttribute("usr")
+        def au = session.getAttribute("id") // u = usuário logado (objeto)
+        def u = User.get(au)
         def pontosTuristicos = []
-        def cat = ["parques","museus"]
-        for (categorias in cat){
-            def results = Locais.findAllByCategoria(categorias,[max: u.parques])
-            for (item in results) {
-                pontosTuristicos.add(item)
-            }
+        for(item2 in u.locais){
+            pontosTuristicos.add(item2)
         }
 
-        render(view: "modeloLocalFavorito", model: [pontosTuristicos: pontosTuristicos, hobbies: hobbies])
+        render(view: "modeloLocalFavorito", model: [pontosTuristicos: pontosTuristicos])
     }
 
     def index(Integer max) {

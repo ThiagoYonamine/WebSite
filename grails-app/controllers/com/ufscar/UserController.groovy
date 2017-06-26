@@ -16,8 +16,9 @@ class UserController {
             println params.senha
             if(params.senha == b.senha){
                 session.setAttribute("id", b.id)
-                session.setAttribute("usr", b)
+                session.setAttribute("usr",b)
                 flash.message="Sucesso"
+
 
             }
             else {
@@ -26,11 +27,13 @@ class UserController {
             }
         }
         else{
-           def a = new User(nome: params.nome, senha: params.senha, parques: 0 ,museus: 0 , dinheiro: 0)
-            a.save()
-
+            def a = new User()
+            a.nome = params.nome
+            a.senha = params.senha
+            a.save(flush: true)
             def c = User.findByNome(params.nome)
             session.setAttribute("usr",c)
+            session.setAttribute("id", c.id)
             redirect(action: 'index')
 
         }
@@ -95,7 +98,7 @@ class UserController {
         }
 
         user.save flush:true
-        session.setAttribute("usr",user)
+
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'user.label', default: 'User'), user.id])

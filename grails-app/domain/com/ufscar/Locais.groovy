@@ -5,6 +5,7 @@ class Locais {
     String url
     String descricao
     String categoria
+
     static constraints = {
     }
 }

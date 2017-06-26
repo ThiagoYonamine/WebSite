@@ -7,7 +7,7 @@ class User {
     int parques =0;
     int museus=0;
     int dinheiro=0;
-
+    static hasMany = [locais: Locais]
     static constraints = {
 
     }
