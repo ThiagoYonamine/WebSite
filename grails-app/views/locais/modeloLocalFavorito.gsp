@@ -13,6 +13,7 @@
 <div class="row">
     <g:each in="${pontosTuristicos}" var="pt">
 
+
         <div class="col-md-4">
             <h2 align = center>${pt.nome}</h2>
             <div class="polaroid">
@@ -23,6 +24,7 @@
                             <div class="textList">${pt.descricao}</div>
                         </div>
                     </a>
+
                 </div>
                 <div class="container1">
                     <p>${pt.descricao}</p>
