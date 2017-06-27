@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Voadora</title>
+    <title>Viajaí</title>
 
     <asset:link rel="icon" href="globe-icon.png" type="image/x-png" />
 
@@ -13,7 +13,9 @@
 <div class="image">
     <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
     <div id ="headerText">
+
        Olá, ${session.getAttribute("usr").nome}.Vamos pra onde?
+
     </div>
 
 
@@ -23,17 +25,17 @@
     </div>
 
     <div id="segundaPergunta">
-        <select id="estado" name="estado">
+        <select id="estado" name="estado" class="second">
             <option value="todos">Todos</option>
             <option value="sp">São Paulo</option>
             <option value="rj">Rio de Janeiro</option>
         </select>
     </div>
-        <a href="#section1">
+
             <div id="buscar">
-                <input class="btn gigante btn-success " type="submit" value="Buscar" />
+                <input href="#section1" class="btn gigante btn-success " type="submit" value="Buscar" />
             </div>
-        </a>
+
     </g:form>
 
 
@@ -42,27 +44,15 @@
 
 <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+            <h1>Viajaí</h1>
 
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
+                Curta os locais onde você gostaria de ir e o site se adapata em tempo real oferencendo as melhores sugestões
+                para seu perfil!
             </p>
 
-            <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
 
-            <h1 id="section1">Section 1</h1>
+            <h1 id="section1"></h1>
             <g:include controller="locais" action="listar" />
 
 
