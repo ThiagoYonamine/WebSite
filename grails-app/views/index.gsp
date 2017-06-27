@@ -13,13 +13,13 @@
 <div class="image">
     <img class="img-responsive" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
     <div id ="headerText">
-       oi ${session.getAttribute("id")}
+       Olá, ${session.getAttribute("usr").nome}.Vamos pra onde?
     </div>
 
 
     <g:form  controller="user" action="attInit" >
     <div id="primeiraPergunta">
-            <input type="number" value=0 min=0 id="dinheiro" name="dinheiro">
+            <input type="number" placeholder="Orçamento para lazer" min=0 id="dinheiro" name="dinheiro">
     </div>
 
     <div id="segundaPergunta">
