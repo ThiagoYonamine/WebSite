@@ -11,6 +11,7 @@ class LocaisController {
     def attLike(){
         def au = session.getAttribute("id")
         def u = User.get(au)
+
         def categoria = params.categoria
         if(categoria=="natureza"){
             u.natureza = u.natureza*1.4
@@ -34,15 +35,35 @@ class LocaisController {
 
         redirect(uri: "/index#section1")
     }
+    def attUnlike(){
 
+        def au = session.getAttribute("id")
+        def u = User.get(au)
+
+        def categoria = params.categoria
+        if(categoria=="natureza"){
+            u.natureza = u.natureza/1.4
+        }
+        if(categoria=="cidade"){
+            u.cidade = u.cidade/1.4
+        }
+        if(categoria=="outros"){
+            u.outros = u.outros/1.4
+        }
+        def newLocal = Locais.get(params.id)
+        u.removeFromLocais(newLocal)
+        u.save(flush:true)
+        redirect(uri:"/usrPro#section1")
+    }
     def listar() {
-        def hobbies = Locais.list() //Todos os pontos turísticos
+
         def au = session.getAttribute("id") // u = usuário logado (objeto)
         def u = User.get(au)
         def pontosTuristicos = []
         def cats = [natureza: u.natureza, cidade: u.cidade, outros: u.outros]
         for (categorias in cats) {
                 def results = Locais.findAllByCategoria(categorias.key)
+                Collections.shuffle(results);
                 def cont = 0.9
                 for (item in results) {
                     if (cont >= categorias.value)
@@ -54,6 +75,7 @@ class LocaisController {
                     }
                 }
         }
+        Collections.shuffle(pontosTuristicos)
         render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos])
     }
 

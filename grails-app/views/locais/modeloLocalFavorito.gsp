@@ -14,8 +14,8 @@
     <div class="row">
         <g:each in="${pontosTuristicos}" var="pt">
 
-              <div class="col-md-4">
-              <h2 align = center>${pt.nome}</h2>
+            <div class="col-md-4">
+                <h2 align = center>${pt.nome}</h2>
                 <div class="thumbnail">
                     <a href="/assets/img${pt.url}.jpg" target="_blank">
                         <div class="img" style="background-image:url('/assets/img${pt.url}.jpg');" ></div>
@@ -27,10 +27,12 @@
 
                 </div>
                 <div id="vote">
-                    <g:form  action="attLike" params="[categoria: pt.categoria, id: pt.id]">
-                        <input class="btn btn-success " type="submit" value="Like" />
+                    <g:form  action="attUnlike" params="[categoria: pt.categoria, id: pt.id]">
+                        <input class="btn btn-success " type="submit" value="Voltar" />
                     </g:form>
                 </div>
+
+            </div>
         </g:each>
     </div>
 
