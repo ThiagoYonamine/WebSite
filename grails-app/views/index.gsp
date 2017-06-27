@@ -5,7 +5,7 @@
     <meta name="layout" content="main"/>
     <title>Voadora</title>
 
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+    <asset:link rel="icon" href="globe-icon.png" type="image/x-png" />
 
 </head>
 <body>
@@ -30,7 +30,9 @@
         </select>
     </div>
         <a href="#section1">
+            <div id="buscar">
                 <input class="btn gigante btn-success " type="submit" value="Buscar" />
+            </div>
         </a>
     </g:form>
 
@@ -63,10 +65,12 @@
             <h1 id="section1">Section 1</h1>
             <g:include controller="locais" action="listar" />
 
+
         </section>
     </div>
 
 
 <asset:javascript src="application.js"/>
+<asset:stylesheet src="list.css"/>
 </body>
 </html>

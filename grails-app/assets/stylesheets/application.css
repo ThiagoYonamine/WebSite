@@ -27,7 +27,7 @@
 .img {
     position: relative;
     float: left;
-    width:  310px;
+    width:  300px;
     height: 300px;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
@@ -38,8 +38,6 @@
     margin: auto;
     width: 100%; /* for IE 6 */
     position: relative;
-
-
 }
 
 #vote{
@@ -57,52 +55,40 @@
     width: 100%;
 
 }
+
 #primeiraPergunta{
     position: absolute;
     top: 70%;
     left: 27%;
 
 }
+
+#segundaPergunta{
+    position: absolute;
+    top: 70%;
+    left: 46%;
+}
+
 .second {
     width: 100%;
     height: 1000px;
     background: #999;
 }
-#segundaPergunta{
-    position: absolute;
-    top: 70%;
-    left: 46%;
 
-}
-#terceiraPergunta{
-    position: absolute;
-    top: 70%;
-    left: 58%;
-
-}
-#quartaPergunta{
-    position: absolute;
-    top: 70%;
-    left: 59%;
-
-}
-#quintaPergunta{
-    position: absolute;
-    top: 70%;
-    left: 75%;
-
-}
 #buscar{
     position: absolute;
-    top: 95%;
+    top: 93%;
     left: 40%;
-    height: 1000px;
-    width: 100px;
+    height: 10%;
+    width: 10%;
 
 }
 .gigante {
-    width: 20%;
-    height: 40%;
+    width: 200%;
+    height: 100%;
+    font-size: 60px;
+    white-space: normal;
+    border-radius: 12px;
 
 }
 select {
