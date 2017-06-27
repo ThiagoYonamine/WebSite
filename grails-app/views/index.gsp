@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Voadora</title>
+    <title>Viajaí</title>
 
     <asset:link rel="icon" href="globe-icon.png" type="image/x-png" />
 

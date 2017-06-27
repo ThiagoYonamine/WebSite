@@ -13,14 +13,10 @@
 <div class="row">
     <g:each in="${pontosTuristicos}" var="pt">
 
-
-    <div class="row">
-        <g:each in="${pontosTuristicos}" var="pt">
-
-            <div class="col-md-4">
-                <h2 align = center>${pt.nome}</h2>
-                <div class="thumbnail">
-
+        <div class="col-md-4">
+            <h2 align = center>${pt.nome}</h2>
+            <div class="polaroid">
+                <div class="container2">
                     <a href="/assets/img${pt.url}.jpg" target="_blank">
                         <img src="/assets/img${pt.url}.jpg" alt="Norway" style="width:100%" class="image1">
                         <div class="overlay">
@@ -28,18 +24,19 @@
                         </div>
                     </a>
                 </div>
-
-                <div id="vote">
-                    <g:form  action="attUnlike" params="[categoria: pt.categoria, id: pt.id]">
-                        <input class="btn btn-success " type="submit" value="Voltar" />
-                    </g:form>
+                <div class="container1">
+                    <p>${pt.descricao}</p>
                 </div>
-
             </div>
-        </g:each>
-    </div>
+            <div id="vote">
+                <g:form  action="attUnlike" params="[categoria: pt.categoria, id: pt.id]">
+                    <input class="btn btn-success " type="submit" value="Unlike" />
+                </g:form>
+            </div>
+        </div>
+    </g:each>
+</div>
 
 
-    </body>
-
+</body>
 </html>
