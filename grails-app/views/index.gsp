@@ -13,15 +13,13 @@
 <div class="image">
     <img class="img-responsive brightness" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
     <div id ="headerText">
-
-       Olá, ${session.getAttribute("usr").nome}.Vamos pra onde?
+       Olá, ${session.getAttribute("usr").nome}. Para onde vamos?
 
     </div>
 
-
     <g:form  controller="user" action="attInit" >
     <div id="primeiraPergunta">
-            <input type="number" placeholder="Orçamento para lazer"  id="dinheiro" name="dinheiro">
+            <input type="number" placeholder="Orçamento"  id="dinheiro" name="dinheiro">
     </div>
 
     <div id="segundaPergunta">
@@ -32,27 +30,24 @@
         </select>
     </div>
 
-            <div id="buscar">
-                <input href="#section1" class="btn gigante btn-success " type="submit" value="Buscar" />
-            </div>
-
+        <div id="buscar">
+            <input href="#section1" class="btn gigante btn-success " type="submit" value="Buscar" />
+        </div>
     </g:form>
-
-
-
 </div>
 
 <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Viajaí</h1>
+            <h3>Viajaí</h3>
 
-            <p>
-                Curta os locais onde você gostaria de ir e o site se adapata em tempo real oferencendo as melhores sugestões
-                para seu perfil!
-            </p>
+            <h2><p>
+                Curta os pontos turísticos que você gostaria de visitar e nós fazemos
+                sugestões em tempo real de acordo com o seu perfil!
+            </p></h2>
 
 
-            <h1 id="section1"></h1>
+            <h3 id="section1"></h3>
+            <!-- Monitora (aguarda "Like") do usuário e lista os pontos turísticos -->
             <g:include controller="locais" action="listar" />
 
 

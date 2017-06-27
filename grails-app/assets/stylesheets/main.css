@@ -84,17 +84,21 @@ img {
 }
 
 .footer {
-    background: #48802c;
+    background: #d73e04;
     color: #000;
     clear: both;
     font-size: 0.8em;
     margin-top: 1.5em;
     padding: 1em;
     min-height: 1em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .footer a {
-    color: #4D8618;
+    color: #FF9000;
 }
 
 .spinner {
@@ -258,7 +262,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .required-indicator {
-    color: #cc0000;
+    color: #FF9000;
     display: inline-block;
     font-weight: bold;
     margin-left: 0.3em;

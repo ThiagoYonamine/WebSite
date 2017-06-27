@@ -13,12 +13,10 @@
 <div class="image">
     <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-            <!--Imagem do perfil do Facebook-->
+            <img class="card-bkimg" alt="" src="/assets/img2.jpg">
         </div>
         <div class="useravatar">
-            <img alt="" src="http://lorempixel.com/100/100/people/9/">
-            <!--Imagem do perfil do Facebook-->
+            <img alt="" src="/assets/img2.jpg">
         </div>
         <div class="card-info"> <span class="card-title">${session.getAttribute("usr").nome}</span>
         </div>

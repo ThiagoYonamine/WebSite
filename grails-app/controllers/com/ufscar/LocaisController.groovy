@@ -8,6 +8,7 @@ class LocaisController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    /*Adaptação Lista geral*/
     def attLike(){
         def au = session.getAttribute("id")
         def u = User.get(au)
@@ -35,6 +36,8 @@ class LocaisController {
 
         redirect(uri: "/index#section1")
     }
+
+    /*Adaptação Lista Favoritos*/
     def attUnlike(){
 
         def au = session.getAttribute("id")
@@ -50,14 +53,15 @@ class LocaisController {
         if(categoria=="outros"){
             u.outros = u.outros/1.4
         }
+
         def newLocal = Locais.get(params.id)
         u.removeFromLocais(newLocal)
         u.save(flush:true)
         redirect(uri:"/usrPro#section1")
     }
-    def listar() {
 
-        def au = session.getAttribute("id") // u = usuário logado (objeto)
+    def listar() {
+        def au = session.getAttribute("id")
         def u = User.get(au)
         def pontosTuristicos = []
         def cats = [natureza: u.natureza, cidade: u.cidade, outros: u.outros]
@@ -68,7 +72,6 @@ class LocaisController {
                 for (item in results) {
                     if (cont >= categorias.value)
                         break
-
                     if (!(u.locais.contains(item))) {
                         pontosTuristicos.add(item)
                         cont++
@@ -80,7 +83,7 @@ class LocaisController {
     }
 
     def listarFavoritos() {
-        def au = session.getAttribute("id") // u = usuário logado (objeto)
+        def au = session.getAttribute("id")
         def u = User.get(au)
         def pontosTuristicos = []
         for(item2 in u.locais){
@@ -90,6 +93,8 @@ class LocaisController {
         render(view: "modeloLocalFavorito", model: [pontosTuristicos: pontosTuristicos])
     }
 
+
+    //Padrão do projeto
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Locais.list(params), model:[locaisCount: Locais.count()]

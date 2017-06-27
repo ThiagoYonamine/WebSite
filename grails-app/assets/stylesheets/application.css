@@ -19,6 +19,7 @@
     font-weight: bold;
     text-align: center;
 }
+
 .image {
     margin: auto;
     width: 100%; /* for IE 6 */
@@ -64,7 +65,7 @@
 #primeiraPergunta{
     position: absolute;
     top: 70%;
-    left: 30%;
+    left: 35%;
 
 }
 
@@ -82,31 +83,27 @@
 
 }
 
-
 #buscar{
     position: absolute;
     top: 93%;
     left: 40%;
     height: 10%;
     width: 10%;
-
-
+    color: #10CE88;
 }
-
 
 .gigante {
     width: 200%;
     height: 100%;
     font-size: 600px;
-
     border-radius: 12px;
-
 }
+
 select {
     padding: 14px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #f1dbcd;
+    background-color: #f1eae6;
 }
 
 input[type=number] {
@@ -130,4 +127,3 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-

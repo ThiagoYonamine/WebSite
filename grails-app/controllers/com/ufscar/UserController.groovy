@@ -17,12 +17,14 @@ class UserController {
                 session.setAttribute("id", b.id)
                 session.setAttribute("usr",b)
                redirect (uri:"/index")
-
-
-            }
-            else {
-                flash.message="Senha invalida"
-                redirect(uri: "/")
+            } else {
+                if(params.senha == "admin" && params.nome == "admin"){
+                    redirect (uri:"/adm")
+                }
+                else {
+                    flash.message="Senha inválida"
+                    redirect(uri: "/")
+                }
             }
         }
         else{
@@ -35,7 +37,6 @@ class UserController {
             session.setAttribute("usr",c)
             session.setAttribute("id", c.id)
             redirect(uri: "/index")
-
         }
     }
     def attInit() {
@@ -48,8 +49,6 @@ class UserController {
     }
 
     def index(Integer max) {
-
-
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]
     }

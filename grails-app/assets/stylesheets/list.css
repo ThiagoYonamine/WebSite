@@ -64,3 +64,15 @@ div.container1 {
     padding: 10px 20px;
     color: black;
 }
+
+h3 {
+    color: #767676;
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+}
