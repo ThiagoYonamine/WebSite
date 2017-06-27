@@ -6,7 +6,7 @@
 
 
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-
+    <asset:link rel="icon" href="globe-icon.png" type="image/x-png" />
     <asset:stylesheet src="style.css"/>
 
 
@@ -27,11 +27,11 @@
         <i class="fa fa-lock"></i>
     </div>
 
-    <span class="alert"> ${flash.message}</span>
+
 
         <g:actionSubmit type="button" class="log-btn" value="Login" />
     </g:form>
-
+     ${flash.message}
 </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

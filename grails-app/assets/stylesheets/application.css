@@ -23,7 +23,12 @@
     margin: auto;
     width: 100%; /* for IE 6 */
     position: relative;
+
 }
+
+.brightness {-webkit-filter: brightness(70%);filter: brightness(70%);}
+
+
 .img {
     position: relative;
     float: left;
@@ -46,7 +51,7 @@
 }
 
 #headerText {
-    color: #fbf2ce;
+    color: #fffbdc;
     font-size: 60px;
     text-align: center;
     font-weight: bold;
@@ -85,14 +90,15 @@
     height: 10%;
     width: 10%;
 
+
 }
 
 
 .gigante {
     width: 200%;
     height: 100%;
-    font-size: 60px;
-    white-space: normal;
+    font-size: 600px;
+
     border-radius: 12px;
 
 }

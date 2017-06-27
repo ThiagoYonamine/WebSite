@@ -35,7 +35,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: white;
+    background-color: rgba(252, 223, 169, 0.75);
 }
 
 .container2:hover .overlay {

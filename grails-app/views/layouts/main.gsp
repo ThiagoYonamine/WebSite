@@ -20,7 +20,7 @@
             <a class="navbar-brand" href="#">Viajaí</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="index">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li><a href="/usrPro">Perfil do usuário</a></li>
 
         </ul>

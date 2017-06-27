@@ -1,4 +1,4 @@
-<%@ page import="com.ufscar.AdaptativoController; com.ufscar.Adaptativo" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -6,13 +6,12 @@
     <meta name="layout" content="estrutura" />
     <g:set var="entityName" value="${message(code: 'locais.label', default: 'Locais')}" />
     <title><g:message code="default.create.label" args="[entityName]" /></title>
-
+    <asset:stylesheet src="list.css"/>
 </head>
 <body>
 
 <div class="row">
     <g:each in="${pontosTuristicos}" var="pt">
-
 
         <div class="col-md-4">
             <h2 align = center>${pt.nome}</h2>
@@ -24,7 +23,6 @@
                             <div class="textList">${pt.descricao}</div>
                         </div>
                     </a>
-
                 </div>
                 <div class="container1">
                     <p>${pt.descricao}</p>

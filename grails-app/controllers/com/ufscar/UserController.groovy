@@ -12,12 +12,11 @@ class UserController {
 
         def b = User.findByNome(params.nome)
         if(b) {
-            println b.senha
-            println params.senha
+
             if(params.senha == b.senha){
                 session.setAttribute("id", b.id)
                 session.setAttribute("usr",b)
-                flash.message="Sucesso"
+               redirect (uri:"/index")
 
 
             }
@@ -27,25 +26,6 @@ class UserController {
             }
         }
         else{
-            Locais l1 = new Locais()
-            l1.categoria = "natureza"
-            l1.url = "1"
-            l1.nome = "a"
-            l1.descricao ="a"
-            Locais l2 = new Locais()
-            l2.categoria = "cidade"
-            l2.url = "2"
-            l2.nome = "b"
-            l2.descricao ="b"
-            Locais l3 = new Locais()
-            l3.categoria = "outros"
-            l3.url = "3"
-            l3.nome = "c"
-            l3.descricao ="c"
-
-            l1.save(flush: true)
-            l2.save(flush: true)
-            l3.save(flush: true)
 
             def a = new User()
             a.nome = params.nome

@@ -1,4 +1,4 @@
-<%@ page import="com.ufscar.AdaptativoController; com.ufscar.Adaptativo" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -6,6 +6,7 @@
         <meta name="layout" content="estrutura" />
         <g:set var="entityName" value="${message(code: 'locais.label', default: 'Locais')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="list.css"/>
 
     </head>
     <body>

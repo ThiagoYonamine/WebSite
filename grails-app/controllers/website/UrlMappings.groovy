@@ -8,6 +8,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/adm"(view:"/adm")
         "/index"(view:"/index")
         "/"(view:"/login")
         "/usrPro"(view:"/usrPro")
