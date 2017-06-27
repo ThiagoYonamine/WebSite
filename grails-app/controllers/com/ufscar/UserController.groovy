@@ -64,6 +64,7 @@ class UserController {
         u.dinheiro = params.int('dinheiro')
         u.estado = params.estado
         u.save(flush: true)
+        redirect(uri: "/index#section1")
     }
 
     def index(Integer max) {
