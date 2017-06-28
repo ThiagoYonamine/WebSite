@@ -13,10 +13,10 @@
 <div class="image">
     <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="/assets/img2.jpg">
+            <img class="card-bkimg" alt="" src="/assets/globe-icon.png">
         </div>
         <div class="useravatar">
-            <img alt="" src="/assets/img2.jpg">
+            <img alt="" src="/assets/globe-icon.png">
         </div>
         <div class="card-info"> <span class="card-title">${session.getAttribute("usr").nome}</span>
         </div>
@@ -25,10 +25,12 @@
     <div id="content" role="main">
         <section class="row colset-2-its">
 
-            <h1 id="section1">Pontos Turísticos Favoritos</h1>
+            <h3 id="section1">Pontos Turísticos Favoritos</h3>
             <g:include controller="locais" action="listarFavoritos" />
 
         </section>
+        <br>
+        <br>
     </div>
 
 </div>
@@ -37,5 +39,6 @@
 <asset:javascript src="usrPro.js"/>
 <asset:javascript src="application.js"/>
 <asset:stylesheet src="usrPro.css"/>
+<asset:stylesheet src="list.css"/>
 </body>
 </html>

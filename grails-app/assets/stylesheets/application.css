@@ -64,15 +64,14 @@
 
 #primeiraPergunta{
     position: absolute;
-    top: 70%;
-    left: 35%;
-
+    top: 61%;
+    left: 42.75%;
 }
 
 #segundaPergunta{
     position: absolute;
-    top: 70%;
-    left: 55%;
+    top: 75%;
+    left: 44.5%;
 }
 
 .second {

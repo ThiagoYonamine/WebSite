@@ -1,8 +1,9 @@
 package com.ufscar
 
 class Locais {
-    String valor
-    String local
+    Integer valor
+    String cidade
+    String estado
     String nome
     String url
     String descricao

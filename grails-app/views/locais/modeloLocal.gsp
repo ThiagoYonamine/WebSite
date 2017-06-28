@@ -26,7 +26,8 @@
                         </a>
                     </div>
                         <div class="container1">
-                            <p>${pt.descricao}</p>
+                            <p>${"Local: "+pt.cidade}
+                            <br>${"Valor: "+pt.valor}</p>
                         </div>
                     </div>
                     <div id="vote">

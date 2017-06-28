@@ -11,22 +11,15 @@ class UserController {
     def login= {
 
         def b = User.findByNome(params.nome)
-        if (b) {
-            if (params.senha == "admin") {
-                redirect(uri: "/adm")
-            } else {
+            if (b) {
                 if (params.senha == b.senha) {
-                    session.setAttribute("id", b.id)
+
                     session.setAttribute("usr", b)
                     redirect(uri: "/index")
                 } else {
                     flash.message = "Senha inválida"
                     redirect(uri: "/")
                 }
-            }
-        } else {
-            if (params.senha == "admin") {
-                redirect(uri: "/adm")
             } else {
                 def a = new User()
                 a.nome = params.nome
@@ -34,20 +27,25 @@ class UserController {
                 a.save(flush: true)
                 def c = User.findByNome(params.nome)
                 session.setAttribute("usr", c)
-                session.setAttribute("id", c.id)
+
                 redirect(uri: "/index")
             }
         }
-    }
-
 
     def attInit() {
-        def au = session.getAttribute("id")
-        def u = User.get(au)
-        u.dinheiro = params.int('dinheiro')
-        u.estado = params.estado
-        u.save(flush: true)
-        redirect(uri: "/index#section1")
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
+        println(params.dinheiro)
+        if (params.dinheiro == ""){
+            flash.message = "Insira um valor"
+            redirect(uri: "/index")
+        } else {
+            u.dinheiro = params.int('dinheiro')
+            u.estado = params.estado
+            u.save(flush: true)
+            session.setAttribute("usr",u)
+            redirect(uri: "/index#section1")
+        }
     }
 
     def index(Integer max) {
@@ -110,7 +108,7 @@ class UserController {
         }
 
         user.save flush:true
-
+        session.setAttribute("usr",user)
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'user.label', default: 'User'), user.id])

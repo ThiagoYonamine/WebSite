@@ -10,8 +10,8 @@ class LocaisController {
 
     /*Adaptação Lista geral*/
     def attLike(){
-        def au = session.getAttribute("id")
-        def u = User.get(au)
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
 
         def categoria = params.categoria
         if(categoria=="natureza"){
@@ -40,18 +40,24 @@ class LocaisController {
     /*Adaptação Lista Favoritos*/
     def attUnlike(){
 
-        def au = session.getAttribute("id")
-        def u = User.get(au)
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
 
         def categoria = params.categoria
         if(categoria=="natureza"){
             u.natureza = u.natureza/1.4
+            u.cidade = u.cidade*1.1
+            u.outros = u.outros*1.05
         }
         if(categoria=="cidade"){
             u.cidade = u.cidade/1.4
+            u.natureza = u.natureza*1.1
+            u.outros = u.outros*1.05
         }
         if(categoria=="outros"){
             u.outros = u.outros/1.4
+            u.natureza = u.natureza*1.05
+            u.cidade = u.cidade*1.05
         }
 
         def newLocal = Locais.get(params.id)
@@ -61,8 +67,8 @@ class LocaisController {
     }
 
     def listar() {
-        def au = session.getAttribute("id")
-        def u = User.get(au)
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
         def pontosTuristicos = []
         def cats = [natureza: u.natureza, cidade: u.cidade, outros: u.outros]
         for (categorias in cats) {
@@ -72,19 +78,19 @@ class LocaisController {
                 for (item in results) {
                     if (cont >= categorias.value)
                         break
-                    if (!(u.locais.contains(item))) {
+                    if (!(u.locais.contains(item)) && ((u.estado==item.estado)||(u.estado=="todos")) && (u.dinheiro >= item.valor)) {
                         pontosTuristicos.add(item)
                         cont++
                     }
                 }
         }
-        Collections.shuffle(pontosTuristicos)
+        //Collections.shuffle(pontosTuristicos)
         render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos])
     }
 
     def listarFavoritos() {
-        def au = session.getAttribute("id")
-        def u = User.get(au)
+        def au = session.getAttribute("usr")
+        def u = User.get(au.id)
         def pontosTuristicos = []
         for(item2 in u.locais){
             pontosTuristicos.add(item2)

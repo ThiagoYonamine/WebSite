@@ -19,7 +19,8 @@
 
     <g:form  controller="user" action="attInit" >
     <div id="primeiraPergunta">
-            <input type="number" placeholder="Orçamento"  id="dinheiro" name="dinheiro">
+        <h1>${flash.message}</h1>
+        <input type="number" value="${session.getAttribute("usr").dinheiro}" id="dinheiro" name="dinheiro">
     </div>
 
     <div id="segundaPergunta">
@@ -49,8 +50,8 @@
             <h3 id="section1"></h3>
             <!-- Monitora (aguarda "Like") do usuário e lista os pontos turísticos -->
             <g:include controller="locais" action="listar" />
-
-
+            <br>
+            <br>
         </section>
     </div>
 
