@@ -92,9 +92,6 @@ class UserController {
         }
     }
 
-    def arrumaLista(){
-        redirect (uri: "/index#section1")
-    }
     def edit(User user) {
         respond user
     }
