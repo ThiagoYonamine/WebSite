@@ -27,8 +27,6 @@
         <i class="fa fa-lock"></i>
     </div>
 
-
-
         <g:actionSubmit type="button" class="log-btn" value="Login" />
     </g:form>
     <h2>${flash.message}</h2>

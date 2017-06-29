@@ -8,14 +8,17 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    /*Se o usuário não existe, cria um novo. User: adm e Pass: adm redireciona para controllers*/
     def login= {
-
         def b = User.findByNome(params.nome)
             if (b) {
                 if (params.senha == b.senha) {
-
                     session.setAttribute("usr", b)
-                    redirect(uri: "/index")
+                    if (b.senha == "adm"){
+                        redirect(uri: "/adm")
+                    } else {
+                        redirect(uri: "/index")
+                    }
                 } else {
                     flash.message = "Senha inválida"
                     redirect(uri: "/")
@@ -32,22 +35,25 @@ class UserController {
             }
         }
 
+    /*Coleta dados do forms*/
     def attInit() {
         def au = session.getAttribute("usr")
         def u = User.get(au.id)
-        println(params.dinheiro)
         if (params.dinheiro == ""){
             flash.message = "Insira um valor"
+
             redirect(uri: "/index")
         } else {
             u.dinheiro = params.int('dinheiro')
             u.estado = params.estado
             u.save(flush: true)
             session.setAttribute("usr",u)
+
             redirect(uri: "/index#section1")
         }
     }
 
+    //Padrão do projeto
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]

@@ -66,6 +66,7 @@ class LocaisController {
         redirect(uri:"/usrPro#section1")
     }
 
+    /*Lista radomicamente de acordo com os dados do forms*/
     def listar() {
         def au = session.getAttribute("usr")
         def u = User.get(au.id)
@@ -74,17 +75,18 @@ class LocaisController {
         for (categorias in cats) {
                 def results = Locais.findAllByCategoria(categorias.key)
                 Collections.shuffle(results);
-                def cont = 0.9
+                def cont = 0.9 //Exibe 2 de cada categoria
                 for (item in results) {
                     if (cont >= categorias.value)
                         break
+                    /*"Filtra" por orçamento e estado*/
                     if (!(u.locais.contains(item)) && ((u.estado==item.estado)||(u.estado=="todos")) && (u.dinheiro >= item.valor)) {
                         pontosTuristicos.add(item)
                         cont++
                     }
                 }
         }
-        //Collections.shuffle(pontosTuristicos)
+        Collections.shuffle(pontosTuristicos)
         render(view: "modeloLocal", model: [pontosTuristicos: pontosTuristicos])
     }
 
@@ -95,7 +97,6 @@ class LocaisController {
         for(item2 in u.locais){
             pontosTuristicos.add(item2)
         }
-
         render(view: "modeloLocalFavorito", model: [pontosTuristicos: pontosTuristicos])
     }
 

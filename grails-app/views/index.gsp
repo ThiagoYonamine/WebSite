@@ -1,10 +1,8 @@
 <!doctype html>
-<%@ page import="com.ufscar.Adaptativo" %>
 <html>
 <head>
     <meta name="layout" content="main"/>
     <title>Viajaí</title>
-
     <asset:link rel="icon" href="globe-icon.png" type="image/x-png" />
 
 </head>
@@ -14,7 +12,6 @@
     <img class="img-responsive brightness" src="http://crisscrosstvl.com/wp-content/uploads/2016/05/sunset-plane.png" alt="Chania">
     <div id ="headerText">
        Olá, ${session.getAttribute("usr").nome}. Para onde vamos?
-
     </div>
 
     <g:form  controller="user" action="attInit" >
