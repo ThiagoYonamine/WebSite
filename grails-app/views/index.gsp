@@ -15,6 +15,8 @@
     </div>
 
     <g:form  controller="user" action="attInit" >
+
+
     <div id="primeiraPergunta">
         <h1>${flash.message}</h1>
         <input type="number" value="${session.getAttribute("usr").dinheiro}" id="dinheiro" name="dinheiro">

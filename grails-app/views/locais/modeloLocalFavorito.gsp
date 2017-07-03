@@ -15,8 +15,8 @@
             <h2 align = center>${pt.nome}</h2>
             <div class="polaroid">
                 <div class="container2">
-                    <a href="/assets/pontos/img${pt.url}.jpg" target="_blank">
-                        <img src="/assets/pontos/img${pt.url}.jpg" alt="Norway" style="width:100%" class="image1">
+                    <a href="/assets/pontos/${pt.url}" target="_blank">
+                        <img src="/assets/pontos/${pt.url}" alt="Norway" style="width:100%" class="image1">
                         <div class="overlay">
                             <div class="textList">${pt.descricao}</div>
                         </div>
