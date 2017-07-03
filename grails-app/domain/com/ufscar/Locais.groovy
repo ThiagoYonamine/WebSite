@@ -8,7 +8,10 @@ class Locais {
     String url
     String descricao
     String categoria
+    static mapping = {
 
+        descricao sqlType: 'longText'
+    }
     static constraints = {
     }
 }
