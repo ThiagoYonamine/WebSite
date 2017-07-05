@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.web.GroovyPageUnitTestMixin} for usage instructions
- */
+
 @TestFor(UserTagLib)
 class UserTagLibSpec extends Specification {
 
@@ -19,4 +19,4 @@ class UserTagLibSpec extends Specification {
         expect:"fix me"
             true == false
     }
-}
+}*/

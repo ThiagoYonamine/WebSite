@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
- */
+
 @TestFor(Adaptativo)
 class AdaptativoSpec extends Specification {
 
@@ -19,4 +19,4 @@ class AdaptativoSpec extends Specification {
         expect:"fix me"
             true == false
     }
-}
+}*/

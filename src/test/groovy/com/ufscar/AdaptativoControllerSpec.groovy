@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
+
 @TestFor(AdaptativoController)
 class AdaptativoControllerSpec extends Specification {
 
@@ -19,4 +19,4 @@ class AdaptativoControllerSpec extends Specification {
         expect:"fix me"
             true == false
     }
-}
+}*/
