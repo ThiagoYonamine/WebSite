@@ -969,6 +969,8 @@ class LocaisController {
                 categoria: "natureza")
         p120.save(flush: true)
 
+        redirect (uri: "/adm")
+
     }
 
     //Padrão do projeto

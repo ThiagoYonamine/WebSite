@@ -14,7 +14,7 @@ class UserController {
             if (b) {
                 if (params.senha == b.senha) {
                     session.setAttribute("usr", b)
-                    if (b.senha == "adm"){
+                    if (b.senha == "adm" && b.nome == "adm"){
                         redirect(uri: "/adm")
                     } else {
                         redirect(uri: "/index")
@@ -22,6 +22,7 @@ class UserController {
                 } else {
                     flash.message = "Senha inválida"
                     redirect(uri: "/")
+
                 }
             } else {
                 def a = new User()
