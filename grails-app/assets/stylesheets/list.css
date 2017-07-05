@@ -44,10 +44,11 @@
 
 .textList {
     color: black;
-    font-size: 10px;
+    font-size: 13px;
     position: absolute;
-    top: 40%;
-    left: 35%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
