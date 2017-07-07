@@ -101,7 +101,7 @@ class LocaisController {
     }
 
 
-    //Função criar() para facilitar a insersão de locais no BD pelo ADM
+    //Função criar() para facilitar a insersão de locais no BD pelo ADM, movido para o init
     def criar() {
 
 

@@ -22,11 +22,6 @@
             </g:each>
         </ul></h3>
 
-        <g:form  controller="locais" action="criar" >
-
-                <input href="#section1" class="btn-success " type="submit" value="Criar Locais" />
-
-        </g:form>
     </div>
 </div>
 </body>
