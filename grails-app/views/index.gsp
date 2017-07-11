@@ -47,7 +47,6 @@
 
 
             <h3 id="section1"></h3>
-            <!-- Monitora (aguarda "Like") do usuário e lista os pontos turísticos -->
             <g:include controller="locais" action="listar" />
             <br>
             <br>

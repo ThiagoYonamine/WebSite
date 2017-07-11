@@ -28,8 +28,9 @@
                 </div>
             </div>
             <div id="vote">
-                <g:form  action="attUnlike" params="[categoria: pt.categoria, id: pt.id]">
-                    <input class="btn btn-success " type="submit" value="Unlike" />
+                <!-- Monitoramento do DisLike -->
+                <g:form  action="attDislike" params="[categoria: pt.categoria, id: pt.id]">
+                    <input class="btn btn-success " type="submit" value="Dislike" />
                 </g:form>
             </div>
         </div>

@@ -28,6 +28,7 @@
                         </div>
                     </div>
                     <div id="vote">
+                        <!-- Monitoramento do Like-->
                         <g:form  action="attLike" params="[categoria: pt.categoria, id: pt.id]">
                             <input class="btn btn-success " type="submit" value="Like" />
                         </g:form>

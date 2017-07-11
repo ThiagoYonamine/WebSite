@@ -10,11 +10,13 @@ class LocaisController {
 
     /*Adaptação Lista geral*/
     def attLike(){
+        //Análise
         def au = session.getAttribute("usr")
         def u = User.get(au.id)
 
         def categoria = params.categoria
         if(categoria=="natureza"){
+            //Decisão
             u.natureza = u.natureza*1.4
             u.cidade = u.cidade/1.1
             u.outros = u.outros/1.05
@@ -30,6 +32,7 @@ class LocaisController {
             u.cidade = u.cidade/1.05
         }
 
+        //Ação
         def newLocal = Locais.get(params.id)
         u.addToLocais(newLocal)
         u.save(flush: true)
@@ -38,7 +41,7 @@ class LocaisController {
     }
 
     /*Adaptação Lista Favoritos*/
-    def attUnlike(){
+    def attDislike(){
 
         def au = session.getAttribute("usr")
         def u = User.get(au.id)
